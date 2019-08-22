@@ -1,0 +1,25 @@
+{
+  "name": "drive-monitor",
+  "version": "1.0.1-1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cp ./settings/dev/.clasp.json ./ && gulp watch",
+    "prod": "cp ./settings/prod/.clasp.json ./ && gulp clasp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@google/clasp": "^2.2.1",
+    "@types/google-apps-script": "0.0.56",
+    "eslint": "^6.2.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-googleappsscript": "^1.0.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "gulp": "^4.0.2",
+    "prettier": "^1.18.2"
+  }
+}
