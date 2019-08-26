@@ -25,11 +25,11 @@ gulp.task('clasp', function(cb) {
 });
 
 gulp.task('devPrep', function devPrep() {
-  return gulp.src('./settings/dev/.clasp.json').pipe(gulp.dest('./build'));
+  return gulp.src('./settings/dev/.clasp.json').pipe(gulp.dest('./'));
 });
 
 gulp.task('buildPrep', function buildPrep() {
-  return gulp.src('./settings/prod/.clasp.json').pipe(gulp.dest('./build'));
+  return gulp.src('./settings/prod/.clasp.json').pipe(gulp.dest('./'));
 });
 
 gulp.task('preBuild', function devPrep() {
