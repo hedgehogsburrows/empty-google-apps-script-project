@@ -7,7 +7,7 @@ const del = require('del');
  * Cleans build
  */
 gulp.task('clean', function() {
-  return del('/build');
+  return del('build');
 });
 
 /**
