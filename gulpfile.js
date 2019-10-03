@@ -28,6 +28,18 @@ gulp.task('devPrep', function devPrep() {
   return gulp.src('./settings/dev/.clasp.json').pipe(gulp.dest('./'));
 });
 
+gulp.task('devassets', function devPrep() {
+  return gulp
+    .src('./settings/dev/assets/**/*.{js,gs,json,html}')
+    .pipe(gulp.dest('build/__dev__assets__'));
+});
+
+gulp.task('prodassets', function devPrep() {
+  return gulp
+    .src('./settings/prod/assets/**/*.{js,gs,json,html}')
+    .pipe(gulp.dest('build/__assets__'));
+});
+
 gulp.task('buildPrep', function buildPrep() {
   return gulp.src('./settings/prod/.clasp.json').pipe(gulp.dest('./'));
 });
@@ -39,12 +51,18 @@ gulp.task('preBuild', function devPrep() {
 /**
  * Dev
  */
-gulp.task('dev', gulp.series('clean', 'devPrep', 'preBuild', 'clasp'));
+gulp.task(
+  'dev',
+  gulp.series('clean', 'devPrep', 'preBuild', 'devassets', 'clasp')
+);
 
 /**
  * Build
  */
-gulp.task('build', gulp.series('clean', 'buildPrep', 'preBuild', 'clasp'));
+gulp.task(
+  'build',
+  gulp.series('clean', 'buildPrep', 'preBuild', 'prodassets', 'clasp')
+);
 
 /**
  * Watcher
@@ -53,5 +71,15 @@ gulp.task(
   'watch',
   gulp.series('dev', function watch() {
     gulp.watch(['./src/**/*.{js,gs,json,html}'], gulp.series('dev'));
+  })
+);
+
+/**
+ * Watcher
+ */
+gulp.task(
+  'watch-prod',
+  gulp.series('build', function watch() {
+    gulp.watch(['./src/**/*.{js,gs,json,html}'], gulp.series('build'));
   })
 );
