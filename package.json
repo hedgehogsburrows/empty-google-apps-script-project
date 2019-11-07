@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp watch",
-    "prod": "gulp build"
+    "prod": "gulp build",
+    "lnsett": "cd ./settings && rm -f .eslintrc && ln -s ./../src/.eslintrc .eslintrc"
   },
   "keywords": [],
   "author": "",
