@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp watch",
     "prod": "gulp build",
-    "lnsett": "cd ./settings && rm -f .eslintrc && ln -s ./../src/.eslintrc .eslintrc"
+    "lnsett": "cd ./settings && rm -f .eslintrc && ln -s ./../src/.eslintrc .eslintrc",
+    "pull-dev": "cp ./settings/dev/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull",
+    "pull-prod": "cp ./settings/prod/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull"
   },
   "keywords": [],
   "author": "",
