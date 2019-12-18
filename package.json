@@ -25,6 +25,7 @@
     "eslint-plugin-googleappsscript": "*",
     "eslint-plugin-prettier": "*",
     "gulp": "*",
-    "prettier": "*"
+    "prettier": "*",
+    "json": "*"
   }
 }
