@@ -70,7 +70,10 @@ gulp.task(
 gulp.task(
   'watch',
   gulp.series('dev', function watch() {
-    gulp.watch(['./src/**/*.{js,gs,json,html}'], gulp.series('dev'));
+    gulp.watch(
+      ['./src/**/*.{js,gs,json,html}', './settings/**/*.{js,gs,json,html}'],
+      gulp.series('dev')
+    );
   })
 );
 
@@ -80,6 +83,9 @@ gulp.task(
 gulp.task(
   'watch-prod',
   gulp.series('build', function watch() {
-    gulp.watch(['./src/**/*.{js,gs,json,html}'], gulp.series('build'));
+    gulp.watch(
+      ['./src/**/*.{js,gs,json,html}', './settings/**/*.{js,gs,json,html}'],
+      gulp.series('build')
+    );
   })
 );
