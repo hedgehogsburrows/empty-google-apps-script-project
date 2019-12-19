@@ -30,14 +30,18 @@ gulp.task('devPrep', function devPrep() {
 
 gulp.task('devassets', function devPrep() {
   return gulp
-    .src('./settings/dev/assets/**/*.{js,gs,json,html}')
-    .pipe(gulp.dest('build/__dev__assets__'));
+    .src('./settings/dev/assets/**/*.{js,gs,json,html}', {
+      base: './settings/dev/assets'
+    })
+    .pipe(gulp.dest('build'));
 });
 
 gulp.task('prodassets', function devPrep() {
   return gulp
-    .src('./settings/prod/assets/**/*.{js,gs,json,html}')
-    .pipe(gulp.dest('build/__assets__'));
+    .src('./settings/prod/assets/**/*.{js,gs,json,html}', {
+      base: './settings/prod/assets'
+    })
+    .pipe(gulp.dest('build'));
 });
 
 gulp.task('buildPrep', function buildPrep() {
