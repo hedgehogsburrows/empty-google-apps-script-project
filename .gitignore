@@ -1,5 +1,4 @@
-./.clasp.json
+/.clasp.json
 node_modules
-package-lock.json
 build
 dist
