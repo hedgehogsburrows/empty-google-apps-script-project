@@ -33,7 +33,7 @@ gulp.task('devassets', function devPrep() {
     .src('./settings/dev/assets/**/*.{js,gs,json,html}', {
       base: './settings/dev/assets'
     })
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build/_assets'));
 });
 
 gulp.task('prodassets', function devPrep() {
@@ -41,7 +41,7 @@ gulp.task('prodassets', function devPrep() {
     .src('./settings/prod/assets/**/*.{js,gs,json,html}', {
       base: './settings/prod/assets'
     })
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build/_assets'));
 });
 
 gulp.task('buildPrep', function buildPrep() {
