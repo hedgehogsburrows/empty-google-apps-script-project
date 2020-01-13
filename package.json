@@ -9,8 +9,8 @@
     "prod": "gulp build",
     "prod-watch": "gulp watch-prod",
     "lnsett": "cd ./settings && rm -f .eslintrc && ln -s ./../src/.eslintrc .eslintrc",
-    "pull-dev": "cp ./settings/dev/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull",
-    "pull-prod": "cp ./settings/prod/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull"
+    "pull-dev": "cp ./settings/dev/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull && rm -rf ./settings/dev/assets && mv ./src/_assets ./settings/dev/assets",
+    "pull-prod": "cp ./settings/prod/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull && rm -rf ./settings/prod/assets && mv ./src/_assets ./settings/prod/assets"
   },
   "keywords": [],
   "author": "",
