@@ -12,5 +12,6 @@
     "require-jsdoc": "off",
     "guard-for-in": "off"
   },
-  "globals": {}
+  "globals": {},
+  "parserOptions": { "ecmaVersion": 6 }
 }

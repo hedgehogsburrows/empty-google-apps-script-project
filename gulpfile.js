@@ -30,7 +30,7 @@ gulp.task('devPrep', function devPrep() {
 
 gulp.task('devassets', function devPrep() {
   return gulp
-    .src('./settings/dev/assets/**/*.{js,gs,json,html}', {
+    .src('./settings/dev/assets/**/*.{ts,js,gs,json,html}', {
       base: './settings/dev/assets'
     })
     .pipe(gulp.dest('build/_assets'));
@@ -38,7 +38,7 @@ gulp.task('devassets', function devPrep() {
 
 gulp.task('prodassets', function devPrep() {
   return gulp
-    .src('./settings/prod/assets/**/*.{js,gs,json,html}', {
+    .src('./settings/prod/assets/**/*.{ts,js,gs,json,html}', {
       base: './settings/prod/assets'
     })
     .pipe(gulp.dest('build/_assets'));
@@ -49,7 +49,7 @@ gulp.task('buildPrep', function buildPrep() {
 });
 
 gulp.task('preBuild', function devPrep() {
-  return gulp.src('./src/**/*.{js,gs,json,html}').pipe(gulp.dest('./build'));
+  return gulp.src('./src/**/*.{ts,js,gs,json,html}').pipe(gulp.dest('./build'));
 });
 
 /**
@@ -75,7 +75,7 @@ gulp.task(
   'watch',
   gulp.series('dev', function watch() {
     gulp.watch(
-      ['./src/**/*.{js,gs,json,html}', './settings/**/*.{js,gs,json,html}'],
+      ['./src/**/*.{ts,js,gs,json,html}', './settings/**/*.{ts,js,gs,json,html}'],
       gulp.series('dev')
     );
   })
@@ -88,7 +88,7 @@ gulp.task(
   'watch-prod',
   gulp.series('build', function watch() {
     gulp.watch(
-      ['./src/**/*.{js,gs,json,html}', './settings/**/*.{js,gs,json,html}'],
+      ['./src/**/*.{ts,js,gs,json,html}', './settings/**/*.{ts,js,gs,json,html}'],
       gulp.series('build')
     );
   })
