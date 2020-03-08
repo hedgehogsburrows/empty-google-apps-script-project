@@ -2,6 +2,11 @@
 const gulp = require('gulp');
 const spawn = require('child_process').spawn;
 const del = require('del');
+const packageJson = require('./package.json');
+
+const watchDelay =
+  (packageJson.devSettings ? packageJson.devSettings.watchDelay : undefined) ||
+  3000;
 
 /**
  * Cleans build
@@ -75,7 +80,11 @@ gulp.task(
   'watch',
   gulp.series('dev', function watch() {
     gulp.watch(
-      ['./src/**/*.{ts,js,gs,json,html}', './settings/**/*.{ts,js,gs,json,html}'],
+      [
+        './src/**/*.{ts,js,gs,json,html}',
+        './settings/**/*.{ts,js,gs,json,html}'
+      ],
+      { delay: watchDelay },
       gulp.series('dev')
     );
   })
@@ -88,7 +97,11 @@ gulp.task(
   'watch-prod',
   gulp.series('build', function watch() {
     gulp.watch(
-      ['./src/**/*.{ts,js,gs,json,html}', './settings/**/*.{ts,js,gs,json,html}'],
+      [
+        './src/**/*.{ts,js,gs,json,html}',
+        './settings/**/*.{ts,js,gs,json,html}'
+      ],
+      { delay: watchDelay },
       gulp.series('build')
     );
   })

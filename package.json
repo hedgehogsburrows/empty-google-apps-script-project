@@ -29,5 +29,8 @@
     "gulp": "*",
     "json": "*",
     "prettier": "*"
+  },
+  "devSettings": {
+    "watchDelay": 900
   }
 }
