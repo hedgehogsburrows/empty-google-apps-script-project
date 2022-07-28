@@ -11,6 +11,7 @@
     "lnsett": "cd ./settings && rm -f .eslintrc && ln -s ./../src/.eslintrc .eslintrc",
     "pretty": "prettier --write ."
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "",

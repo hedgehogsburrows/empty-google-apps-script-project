@@ -1,8 +1,10 @@
-const gulp = require('gulp');
-const spawn = require('child_process').spawn;
-const del = require('del');
+import gulp from 'gulp';
+import { spawn } from 'child_process';
+import * as fs from 'fs';
+import { createRequire } from 'module';
+import del from 'del';
+const require = createRequire(import.meta.url);
 const packageJson = require('./package.json');
-const fs = require('fs');
 
 const watchDelay = (packageJson.devSettings ? packageJson.devSettings.watchDelay : undefined) || 3000;
 

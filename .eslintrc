@@ -2,8 +2,11 @@
   "extends": ["eslint:recommended", "google", "plugin:prettier/recommended"],
   "plugins": ["prettier"],
   "env": {
-    "node": true,
-    "es6": true
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "sourceType": "module"
   },
   "rules": {
     "prettier/prettier": "error"
