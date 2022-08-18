@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import { spawn } from 'child_process';
 import * as fs from 'fs';
 import { createRequire } from 'module';
-import del from 'del';
+import deleteAsync from 'del';
 const require = createRequire(import.meta.url);
 const packageJson = require('./package.json');
 
@@ -17,14 +17,14 @@ const version = [packageJson.version, '⎇'];
  * Cleans build
  */
 gulp.task('clean', function () {
-  return del(`${argv.buildpart}`);
+  return deleteAsync(`${argv.buildpart}`);
 });
 
 /**
  * Cleans build
  */
 gulp.task('clean-clients', function () {
-  return del('clients/build');
+  return deleteAsync('clients/build');
 });
 /**
  * Preparation of the configuration file .clasp.json
