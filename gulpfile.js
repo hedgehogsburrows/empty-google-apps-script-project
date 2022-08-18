@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import { spawn } from 'child_process';
 import * as fs from 'fs';
 import { createRequire } from 'module';
-import deleteAsync from 'del';
+import { deleteAsync } from 'del';
 const require = createRequire(import.meta.url);
 const packageJson = require('./package.json');
 
