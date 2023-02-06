@@ -3,7 +3,8 @@
   "extends": ["eslint:recommended", "google", "plugin:prettier/recommended"],
   "plugins": ["prettier", "googleappsscript"],
   "env": {
-    "googleappsscript/googleappsscript": true
+    "googleappsscript/googleappsscript": true,
+    "es6": true
   },
   "rules": {
     "prettier/prettier": "error",
