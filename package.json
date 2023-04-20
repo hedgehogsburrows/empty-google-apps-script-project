@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "gulp start --part=prod --push-version --update-clients",
-    "dev": "gulp start --part=dev --watch",
+    "dev": "gulp start --part=dev --watch_mode",
     "dev-version": "gulp start --part=dev --push-version",
     "pull-dev": "cp ./settings/dev/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull && rm -rf ./settings/dev/assets && mv ./src/_assets ./settings/dev/assets",
     "pull-prod": "cp ./settings/prod/.clasp.json ./ && json -I -f .clasp.json -e \"this.rootDir='src'\" && clasp pull && rm -rf ./settings/prod/assets && mv ./src/_assets ./settings/prod/assets",
