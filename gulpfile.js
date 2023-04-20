@@ -267,7 +267,7 @@ gulp.task('start', function (done) {
 
   if (!seriesList.includes('clasp')) seriesList.push('clasp');
   const buildSeries = () => gulp.series(seriesList);
-  return Object.prototype.hasOwnProperty.call(argv, 'watch')
+  return Object.prototype.hasOwnProperty.call(argv, 'watch_mode')
     ? gulp.watch(
         ['./src/**/*.{ts,js,gs,json,html}', './settings/**/*.{ts,js,gs,json,html}'],
         { delay: watchDelay },
