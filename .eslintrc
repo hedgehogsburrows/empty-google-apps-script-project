@@ -10,6 +10,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "comma-dangle": ["error", "never"],
     "prettier/prettier": "error"
   },
   "globals": {}

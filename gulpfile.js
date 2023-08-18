@@ -90,7 +90,7 @@ gulp.task('preparation-update-clients', function (cb) {
     appscript.dependencies.libraries[index].libraryId = claspjson.scriptId;
     appscript.dependencies.libraries[index].developmentMode = Object.prototype.hasOwnProperty.call(
       argv,
-      'developmentMode',
+      'developmentMode'
     );
 
     // fs.mkdirSync('./clients/build', { recursive: true });
@@ -101,7 +101,7 @@ gulp.task('preparation-update-clients', function (cb) {
 
 gulp.task('update-clients-bulk', function (cb) {
   const projects = JSON.parse(
-    /start[\s\S]*?`([\s\S]+?)`[\s\S]*?end/.exec(fs.readFileSync(`./settings/${argv.part}/assets/index.js`))[1],
+    /start[\s\S]*?`([\s\S]+?)`[\s\S]*?end/.exec(fs.readFileSync(`./settings/${argv.part}/assets/index.js`))[1]
   );
   // cb(projects);
   const clientsList = argv['clients-list'] ? JSON.parse(`[${argv['clients-list']}]`) : undefined;
@@ -129,7 +129,7 @@ gulp.task('update-clients-bulk', function (cb) {
         !clientsList ||
         clientsList.includes(projects.projects[i].stage) ||
         clientsList.includes(projects.projects[i].container) ||
-        clientsList.includes(projects.projects[i].projectId),
+        clientsList.includes(projects.projects[i].projectId)
     );
   console.log(tasks);
   return gulp.series(...tasks)(cb);
@@ -257,7 +257,7 @@ gulp.task('start', function (done) {
       'clean-clients',
       'preparation-update-client-code',
       'preparation-update-clients',
-      'update-clients-bulk',
+      'update-clients-bulk'
     );
 
     const updateClientsvSeries = () => gulp.series(seriesList);
@@ -271,7 +271,7 @@ gulp.task('start', function (done) {
     ? gulp.watch(
         ['./src/**/*.{ts,js,gs,json,html}', './settings/**/*.{ts,js,gs,json,html}'],
         { delay: watchDelay },
-        buildSeries(),
+        buildSeries()
       )
     : buildSeries()(done);
 });
